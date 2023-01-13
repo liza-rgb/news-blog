@@ -7,5 +7,8 @@ export const theme = createTheme({
       color: '#363636',
       fontWeight: 400,
     },
+    button: {
+      textTransform: 'none',
+    },
   },
 });

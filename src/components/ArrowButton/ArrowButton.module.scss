@@ -1,0 +1,22 @@
+button {
+  &.arrow-button {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0px;
+    color: inherit;
+
+    &:hover {
+      background-color: transparent;
+
+      svg {
+        transform: translateX(3px);
+      }
+    }
+
+    svg {
+      margin-left: 4px;
+      width: 13px;
+    }
+  }
+}
