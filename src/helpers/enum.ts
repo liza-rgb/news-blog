@@ -1,14 +1,14 @@
-interface LaunchProps {
+interface Launch {
   id: string;
   provider: string;
 }
 
-interface EventProps {
+interface Event {
   id: string;
   provider: string;
 }
 
-export interface ArticleProps {
+export interface Article {
   id: number;
   title: string;
   url: string;
@@ -18,6 +18,6 @@ export interface ArticleProps {
   publishedAt: string;
   updatedAt: string;
   featured: boolean;
-  launches: LaunchProps[];
-  events: EventProps[];
+  launches: Launch[];
+  events: Event[];
 }
