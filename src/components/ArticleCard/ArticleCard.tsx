@@ -12,16 +12,16 @@ interface ArticleCardProps {
   title: string;
   content: string;
   imageUrl: string;
-  updatedAt: string;
+  publishedAt: string;
 }
 
-const ArticleCard: React.FC<ArticleCardProps> = ({ title, content, imageUrl, updatedAt }) => {
+const ArticleCard: React.FC<ArticleCardProps> = ({ title, content, imageUrl, publishedAt }) => {
   return (
     <Card variant='outlined' className={styles.card}>
       <CardMedia component='img' image={imageUrl} alt='' />
       <CardContent className={styles.content}>
         <Typography className={styles['publish-date']}>
-          <Calendar /> {formatDate(new Date(updatedAt))}
+          <Calendar /> {formatDate(new Date(publishedAt))}
         </Typography>
         <Typography component='h3' className={styles.title}>
           {title}
