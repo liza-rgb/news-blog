@@ -53,7 +53,10 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ id, title, content, imageUrl,
         <Typography component='h3' className={styles.title}>
           {getHighlightedText(title)}
         </Typography>
-        <Typography component='div'>{getHighlightedText(content)}</Typography>
+        <Typography component='div' className={styles.summary}>
+          {getHighlightedText(content.substring(0, 100))}
+          {content.length > 100 ? '...' : ''}
+        </Typography>
       </CardContent>
       <CardActions className={styles.actions}>
         <ArrowButton
