@@ -1,0 +1,33 @@
+.search-form {
+  .form-title {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .form-content {
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
+    padding: 15px 20px 15px 0;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    button {
+      color: inherit;
+      width: 10%;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    .text-input {
+      width: 90%;
+    }
+  }
+}
