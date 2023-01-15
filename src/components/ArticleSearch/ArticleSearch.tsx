@@ -5,6 +5,7 @@ import { Search } from 'akar-icons';
 
 import { useAppDispatch } from '../../store/store';
 import { searchArticles } from '../../store/features/articleSlice';
+import { setSearchQuery } from '../../store/features/searchSlice';
 
 import styles from './ArticleSearch.module.scss';
 
@@ -16,6 +17,7 @@ const ArticleSearch: React.FC = () => {
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     dispatch(searchArticles(searchQuery.current));
+    dispatch(setSearchQuery({ searchQuery: searchQuery.current }));
   };
 
   return (
