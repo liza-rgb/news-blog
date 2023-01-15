@@ -13,10 +13,10 @@ const ArticleList: React.FC = () => {
 
   if (articles.length > 0) {
     return (
-      <Grid container spacing={3}>
+      <Grid container spacing={5} justifyContent='space-between'>
         {articles.map((article) => {
           return (
-            <Grid item key={article.id} xs={12} md={6} lg={4}>
+            <Grid item key={article.id}>
               <ArticleCard
                 id={article.id}
                 title={article.title}
