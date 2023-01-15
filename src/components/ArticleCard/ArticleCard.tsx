@@ -7,15 +7,20 @@ import { formatDate } from '../../helpers';
 
 import styles from './ArticleCard.module.scss';
 import ArrowButton from '../ArrowButton';
+import { useAppDispatch } from '../../store/store';
+import { setArticleScreen } from '../../store/features/screenSlice';
 
 interface ArticleCardProps {
+  id: number;
   title: string;
   content: string;
   imageUrl: string;
   publishedAt: string;
 }
 
-const ArticleCard: React.FC<ArticleCardProps> = ({ title, content, imageUrl, publishedAt }) => {
+const ArticleCard: React.FC<ArticleCardProps> = ({ id, title, content, imageUrl, publishedAt }) => {
+  const dispatch = useAppDispatch();
+
   return (
     <Card variant='outlined' className={styles.card}>
       <CardMedia component='img' image={imageUrl} alt='' />
@@ -29,7 +34,11 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ title, content, imageUrl, pub
         <Typography component='div'>{content}</Typography>
       </CardContent>
       <CardActions className={styles.actions}>
-        <ArrowButton type='forward' name='Read more' onClick={() => undefined} />
+        <ArrowButton
+          type='forward'
+          name='Read more'
+          onClick={() => dispatch(setArticleScreen({ article_id: id }))}
+        />
       </CardActions>
     </Card>
   );
