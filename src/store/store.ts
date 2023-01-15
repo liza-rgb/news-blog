@@ -3,11 +3,13 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 
 import { ArticleSlice } from './features/articleSlice';
 import { ScreenSlice } from './features/screenSlice';
+import { SearchSlice } from './features/searchSlice';
 
 export const store = configureStore({
   reducer: {
     article: ArticleSlice.reducer,
     screen: ScreenSlice.reducer,
+    search: SearchSlice.reducer,
   },
 });
 
