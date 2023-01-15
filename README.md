@@ -2,7 +2,7 @@
 
 ## Yelyzaveta Stoliarchuk
 
-### https://63c43067df14f677207d2a92--nimble-stardust-a19ce1.netlify.app
+### https://nimble-stardust-a19ce1.netlify.app
 
 Article Blog is a Single Page Application with React.
 
