@@ -18,13 +18,13 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ name, type, onClick }) => {
         return (
           <>
             {name}
-            <ArrowRight />
+            <ArrowRight className={styles.forward} />
           </>
         );
       case 'back':
         return (
           <>
-            <ArrowLeft />
+            <ArrowLeft className={styles.back} />
             {name}
           </>
         );

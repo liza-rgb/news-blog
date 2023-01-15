@@ -9,8 +9,12 @@ button {
     &:hover {
       background-color: transparent;
 
-      svg {
+      svg.forward {
         transform: translateX(3px);
+      }
+
+      svg.back {
+        transform: translateX(-3px);
       }
     }
 
