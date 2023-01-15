@@ -1,6 +1,28 @@
-# Getting Started with Create React App
+# CodeBridge Test Task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Yelyzaveta Stoliarchuk
+
+### https://63c43067df14f677207d2a92--nimble-stardust-a19ce1.netlify.app
+
+Article Blog is a Single Page Application with React.
+
+Home page should contain:
+
+1. Cards with article titles and descriptions for 100 characters. The user can click on the card to go to an article page that contains the title and full description of the selected article.
+
+2. A field to filter by keyword. The user enters keywords into the field and the system displays all articles containing at least one of the keywords in the name or/and description.
+
+The priority of fields: (1) names; and (2) description. The article with one match in the name is higher than the article with one match in the description.
+
+The matched keywords should be highlighted with yellow color.
+
+## What is expected?
+
+- Please use TypeScript as the main language.
+- CSS preprocessors should be used.
+- Please use Material UI.
+- Showing an example of a custom hook will be a plus.
+- Showing an example of state management will be a big plus.
 
 ## Available Scripts
 
