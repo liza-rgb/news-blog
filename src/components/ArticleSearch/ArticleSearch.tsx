@@ -16,8 +16,10 @@ const ArticleSearch: React.FC = () => {
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    dispatch(searchArticles(searchQuery.current));
-    dispatch(setSearchQuery({ searchQuery: searchQuery.current }));
+    if (searchQuery.current.trim().length) {
+      dispatch(searchArticles(searchQuery.current));
+      dispatch(setSearchQuery({ searchQuery: searchQuery.current.trim() }));
+    }
   };
 
   return (
