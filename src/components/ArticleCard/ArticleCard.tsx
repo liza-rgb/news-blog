@@ -2,13 +2,14 @@ import React from 'react';
 
 import { Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 import { Calendar } from 'akar-icons';
+import ArrowButton from '../ArrowButton';
 
 import { formatDate } from '../../helpers';
 
-import styles from './ArticleCard.module.scss';
-import ArrowButton from '../ArrowButton';
-import { useAppDispatch } from '../../store/store';
+import { useAppDispatch, useAppSelector } from '../../store/store';
 import { setArticleScreen } from '../../store/features/screenSlice';
+
+import styles from './ArticleCard.module.scss';
 
 interface ArticleCardProps {
   id: number;
@@ -19,7 +20,28 @@ interface ArticleCardProps {
 }
 
 const ArticleCard: React.FC<ArticleCardProps> = ({ id, title, content, imageUrl, publishedAt }) => {
+  const searchQuery = useAppSelector((state) => state.search.searchQuery);
+
   const dispatch = useAppDispatch();
+
+  const getHighlightedText = (text: string) => {
+    const textParts = text.split(new RegExp(`(${searchQuery.replace(' ', '|')})`, 'gi'));
+    const searchParts = searchQuery.toLowerCase().split(' ');
+
+    return (
+      <>
+        {textParts.map((part, i) => (
+          <Typography
+            component='span'
+            key={i}
+            className={searchParts.includes(part.toLowerCase()) ? styles.highlight : ''}
+          >
+            {part}
+          </Typography>
+        ))}
+      </>
+    );
+  };
 
   return (
     <Card variant='outlined' className={styles.card}>
@@ -29,9 +51,9 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ id, title, content, imageUrl,
           <Calendar /> {formatDate(new Date(publishedAt))}
         </Typography>
         <Typography component='h3' className={styles.title}>
-          {title}
+          {getHighlightedText(title)}
         </Typography>
-        <Typography component='div'>{content}</Typography>
+        <Typography component='div'>{getHighlightedText(content)}</Typography>
       </CardContent>
       <CardActions className={styles.actions}>
         <ArrowButton
